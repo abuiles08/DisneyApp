@@ -1,0 +1,49 @@
+<div class="container">
+  <h1 class="display-3" align= "center" >Disney</h1>
+  <br>
+  <p align ="center">Ingrese la cantidad de dias, adultos y niños.</p>
+  <br>
+  <form (ngSubmit)="inicioForm.form.valid && buscar()" #inicioForm="ngForm" novalidate >
+    <div class ="row">
+      <div class="col-sm-4">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Cantidad Dias</span>
+        </div>
+        <input type="number" class="form-control" aria-label="With textarea" id="dias" [(ngModel)] = "dias" name ="dias" required  #cDias="ngModel">
+      </div>
+      <div class="col-sm-4">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Cantidad Adultos</span>
+        </div>
+        <input type="number" class="form-control" aria-label="With textarea" id="adultos" [(ngModel)] = "adultos" name ="adultos" required #cAdultos="ngModel" >
+      </div>
+      <div class="col-sm-4">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Cantidad Niños</span>
+        </div>
+        <input type="number" class="form-control" aria-label="With textarea" id="demonios" [(ngModel)] = "demonios" name ="demonios" required  #cDemonios="ngModel" >
+      </div>
+    </div>
+    <br>
+   
+    <div [hidden]="cDias.valid || cDias.pristine"
+            class="alert alert-danger">
+            Se debe de ingresar la cantidad de Dias...
+    </div>
+    <div [hidden]="cAdultos.valid || cAdultos.pristine"
+            class="alert alert-danger">
+            Se debe de ingresar la cantidad de Adultos...
+    </div>
+    <div [hidden]="cDemonios.valid || cDemonios.pristine"
+            class="alert alert-danger">
+            Se debe de ingresar la cantidad de Niños...
+    </div>
+    <button type="submit" id="btn" class="btn btn-primary">Buscar</button>
+  </form>
+</div>
+
+
+
+
+
+

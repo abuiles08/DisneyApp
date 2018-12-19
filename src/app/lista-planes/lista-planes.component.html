@@ -1,0 +1,27 @@
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">Lista de Planes</h1>
+    <p class="lead">A continuación seleccione el plan de su preferencia.</p>
+</div>
+<div class="container">
+  <div class="card-deck mb-3 text-center">
+    <div class="card mb-4 shadow-sm" *ngFor = "let plan of planes">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">{{plan.imageSet | uppercase}}</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">{{plan.currency}} {{plan.grandTotal | currency}}</h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li><strong>Plan:</strong> {{plan.name}}</li>
+           <li><strong>Descripción:</strong> {{plan.description}}</li>
+          <li><strong>Nro Días:</strong> {{plan.numberOfDays}}</li>
+          <li><strong>Precio Adultos:</strong> {{plan.totalAdultRate | currency}}</li>
+          <li><strong>Precio Niños:</strong> {{plan.totalChildRate | currency}}</li>
+        </ul>
+         <button type="submit" class="btn btn-lg btn-block btn-outline-primary" (click)="buscar()">¡Lo Quiero!</button>
+     </div>
+    </div>
+  </div>
+ <a class="btn btn-danger btn-block btn-md" href="" role="button"><i class="fa fa-home"></i> Inicio</a>
+</div>
+
+
